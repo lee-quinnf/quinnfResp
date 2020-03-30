@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.sz.ben.hibernate.manytomany.Course">
+		<id name="cid" length="5">
+			<generator class="increment"></generator>
+		</id>
+		<property name="name" length="20"></property>
+		<property name="description" length="50"></property>
+		<!-- 
+			select c.*,s.*
+				from course c,student s,student_course sc
+					where c.cid=sc.cid and s.sid=sc.sid
+		 -->
+		<set name="students" table="student_course" cascade="save-update">
+			<key>
+				<column name="cid"></column>
+			</key>
+			<many-to-many class="com.sz.ben.hibernate.manytomany.Student" column="sid"></many-to-many>
+		</set>
+	</class>
+</hibernate-mapping>

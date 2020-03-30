@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.sz.ben.hibernate.onetomany.doubl.Student">
+		<id name="sid" length="5">
+			<generator class="increment"></generator>
+		</id>
+		<property name="name" length="20"></property>
+		<property name="description" length="50"></property>
+		<!-- 
+			column 代表外键
+		 -->
+		<many-to-one name="classes" 
+			class="com.sz.ben.hibernate.onetomany.doubl.Classes"
+			column="cid" cascade="save-update"></many-to-one>
+	</class>
+</hibernate-mapping>

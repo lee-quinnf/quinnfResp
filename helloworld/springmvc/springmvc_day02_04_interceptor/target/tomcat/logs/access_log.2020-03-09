@@ -1,0 +1,3 @@
+0:0:0:0:0:0:0:1 - - [09/Mar/2020:16:35:16 +0800] "GET /springmvc_day02_047_interceptor/user/testInterceptor HTTP/1.1" 404 - http-bio-8080-exec-1 0
+0:0:0:0:0:0:0:1 - - [09/Mar/2020:16:35:25 +0800] "GET /springmvc_day02_047_interceptor/user/testInterceptor HTTP/1.1" 404 - http-bio-8080-exec-3 0
+0:0:0:0:0:0:0:1 - - [09/Mar/2020:16:36:20 +0800] "GET /springmvc_day02_04_interceptor/user/testInterceptor HTTP/1.1" 200 120 http-bio-8080-exec-1 495

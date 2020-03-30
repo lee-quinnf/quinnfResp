@@ -1,0 +1,21 @@
+#MyEclipse Hibernate Properties
+#Fri Sep 19 10:25:59 CST 2014
+genBasicCompId=false
+sessionFactoryName=com.itheima11.hibernate.utils.HibernateSessionFactory
+profile=
+daoSFId=
+jndiPath=
+detectM2M=false
+reStrategyClass=
+detectO2O=false
+springDaoFile=
+useJavaTypes=true
+keyGenerator=increment
+genVersionTag=false
+sessionFactoryId=
+basePersistenceClass=
+genAnnotations=false
+reSettingsFile=
+configFile=/day01-01-itheima11-hibernate-crud/src/hibernate.cfg.xml
+createConfigFile=false
+baseDaoClass=BaseHibernateDAO

@@ -1,0 +1,2 @@
+0:0:0:0:0:0:0:1 - - [09/Mar/2020:10:17:51 +0800] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-1 0
+0:0:0:0:0:0:0:1 - - [09/Mar/2020:10:17:54 +0800] "GET /springmvc_day01_01_start/user/hello.action HTTP/1.1" 200 130 http-bio-8080-exec-3 509

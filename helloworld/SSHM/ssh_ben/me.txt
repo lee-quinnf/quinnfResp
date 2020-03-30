@@ -1,0 +1,38 @@
+1、创建一个工程
+2、工程的编码改成utf-8
+3、把jsp的编码也改成utf-8
+4、导入jar包
+5、建立三个src folder
+    src 
+       	存放源代码
+    config
+                     存放配置文件
+    test
+                     存放测试类
+6、在src下建立包，写持久化类和映射文件
+    Person.java
+    Person.hbm.xml
+7、写spring的配置文件，引入sessionFactory
+   config/spring
+       applicationContext.xml
+       applicationContext-db.xml
+          	引入sessionFactory
+8、在test建立一个包com.ben.s2sh.test
+9、创建一个测试类SessionFactoryTest
+10、创建dao层和service层的类和接口
+      PersonDao
+      PersonDaoImpl
+      PersonService
+      PersonServiceImpl
+11、准备spring声明式事务处理的配置
+12、把dao和service放入到spring容器中
+13、测试spring的声明式事务处理
+14、写action
+15、把action放入到spring的配置文件中
+16、测试action
+17、写struts2的配置文件
+    <action name="personAction_*" method="{1}" class="personAction">
+	</action>
+	class属性的值和spring配置文件中的id的值要一致
+18、写web.xml
+19、测试

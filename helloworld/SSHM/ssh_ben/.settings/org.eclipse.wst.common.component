@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="ssh_ben">
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/config"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/test"/>
+        <wb-resource deploy-path="/" source-path="/WebContent"/>
+        <property name="java-output-path" value="/ssh_ben/build/classes"/>
+        <property name="context-root" value="ssh_ben"/>
+    </wb-module>
+</project-modules>

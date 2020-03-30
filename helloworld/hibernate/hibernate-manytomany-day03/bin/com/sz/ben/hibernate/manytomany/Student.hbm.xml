@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.sz.ben.hibernate.manytomany.Student">
+		<id name="sid" length="5">
+			<generator class="increment"></generator>
+		</id>
+		<property name="name" length="20"></property>
+		<property name="description" length="50"></property>
+		<!-- 
+			table描述的是第三张表
+		 -->
+		<set name="courses" table="student_course" cascade="save-update">
+			<!-- 
+				外键
+			 -->
+			<key>
+				<column name="sid"></column>
+			</key>
+			<many-to-many class="com.sz.ben.hibernate.manytomany.Course" column="cid"></many-to-many>
+		</set>
+	</class>
+</hibernate-mapping>

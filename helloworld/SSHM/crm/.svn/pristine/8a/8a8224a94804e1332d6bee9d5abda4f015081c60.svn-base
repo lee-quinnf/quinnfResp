@@ -1,0 +1,82 @@
+package com.itheima.crm.web.action;
+
+import org.hibernate.criterion.DetachedCriteria;
+
+import com.itheima.crm.domain.Customer;
+import com.itheima.crm.domain.PageBean;
+import com.itheima.crm.service.CustomerService;
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
+
+/**
+ * 客户管理的Action类
+ * 
+ * @author quinnf
+ *
+ */
+public class CustomerAction extends ActionSupport implements ModelDriven<Customer> {
+
+	// 模型驱动使用的对象
+	private Customer customer = new Customer();
+
+	@Override
+	public Customer getModel() {
+		return customer;
+	}
+
+	// 注入Service
+	private CustomerService customerService;
+
+	public void setCustomerService(CustomerService customerService) {
+		this.customerService = customerService;
+	}
+
+	// 使用set方法的方式接收数据:
+	private Integer currPage = 1;
+
+	public void setCurrPage(Integer currPage) {
+		if (currPage == null) {
+			currPage = 1;
+		}
+		this.currPage = currPage;
+	}
+
+	// 使用set方法接受每页显示记录数
+	private Integer pageSize = 3;
+
+	public void setPageSize(Integer pageSize) {
+		if (pageSize == null) {
+			pageSize = 3;
+		}
+		this.pageSize = pageSize;
+	}
+
+	/**
+	 * 客户管理：跳转到添加页面的方法:saveUI
+	 */
+	public String saveUI() {
+		return "saveUI";
+	}
+
+	/**
+	 * 保存客户的方法：save
+	 */
+	public String save() {
+		customerService.save(customer);
+		return NONE;
+	}
+
+	/**
+	 * 分页查询客户的方法：findAll
+	 */
+	public String findAll() {
+		// 接收参数：分页参数
+		// 最好使用DetachedCriteria对象（条件查询--带分页）
+		DetachedCriteria detachedCriteria = DetachedCriteria.forClass(Customer.class);
+		// 调用业务层查询:
+		PageBean<Customer> pageBean = customerService.findByPage(detachedCriteria, currPage, pageSize);
+		ActionContext.getContext().getValueStack().push(pageBean);
+		return "findAll";
+	}
+}

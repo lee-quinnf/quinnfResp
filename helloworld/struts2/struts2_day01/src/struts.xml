@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 配置Struts2的常量 -->
+	<constant name="struts.action.extension" value="action"/>
+
+	<include file="com/sz/ben/struts/demo1/struts_demo1.xml"/>	
+	<include file="com/sz/ben/struts/demo2/struts_demo2.xml"/>	
+	<include file="com/sz/ben/struts/demo3/struts_demo3.xml"/>	
+
+</struts>

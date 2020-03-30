@@ -1,0 +1,18 @@
+package com.itheima.crm.service;
+
+import org.hibernate.criterion.DetachedCriteria;
+
+import com.itheima.crm.domain.Customer;
+import com.itheima.crm.domain.PageBean;
+
+/**
+ * 客户管理的Service的接口
+ * @author quinnf
+ */
+public interface CustomerService {
+
+	void save(Customer customer);
+
+	PageBean<Customer> findByPage(DetachedCriteria detachedCriteria, Integer currPage,Integer pageSize);
+
+}
